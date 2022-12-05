@@ -4,8 +4,6 @@ function getRandomHexColor() {
         .padStart(6, 0)}`;
 }
 
-
-
 const createBtn = document.querySelector("button[data-create]");
 const destroyBtn = document.querySelector("button[data-destroy]");
 const input = document.querySelector("input");
