@@ -9,7 +9,7 @@ const destroyBtn = document.querySelector("button[data-destroy]");
 const input = document.querySelector("input");
 
 const divBox = document.querySelector("#boxes");
-//Create
+//Create with
 const createBoxes = (amount) => {
     let FirstboxSize = 30;
     for (let i = 0; i < amount; i++) {
@@ -21,11 +21,18 @@ const createBoxes = (amount) => {
         FirstboxSize += 10;
     }
 };
+
 createBtn.addEventListener("click", () => {
+    if ( input.value > 100 || input.value < 1 ) {
+        alert("Please use amount between 1 and 100!")
+        input.value = 0
+        return
+    } 
     createBoxes(input.value);
 });
-// Seek And Destroy
 
+
+// Seek And Destroy
 const destroyBoxes = () => {
   while (divBox.firstChild) {
     divBox.removeChild(divBox.firstChild);
@@ -35,3 +42,5 @@ const destroyBoxes = () => {
 destroyBtn.addEventListener("click", () => {
     destroyBoxes()
 });
+
+
